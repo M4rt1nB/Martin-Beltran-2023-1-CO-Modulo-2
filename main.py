@@ -5,3 +5,5 @@ if __name__ == "__main__":
     game.run()
     print("hello there...")
     
+    print("ME VOYYY")
+    
