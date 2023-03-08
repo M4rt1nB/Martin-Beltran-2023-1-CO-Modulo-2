@@ -25,6 +25,7 @@ class Game:
         self.menu = menu("press any key to star", self.screen)
         self.running = False
         self.score = 0
+        self.best = []
         self.death_count = 0
 
     def execute(self):
@@ -58,6 +59,7 @@ class Game:
         self.player.update(user_input)
         self.obstacle.update(self)
         self.update_score()
+        
 
     def draw(self):
         self.clock.tick(FPS)
@@ -87,8 +89,19 @@ class Game:
         if self.death_count == 0:
             self.menu.draw(self.screen)
         else:
-            self.menu.update_message("new message")
+            self.menu.update_message("ops you dont jump")
             self.menu.draw(self.screen)
+            self.menu.best_message(f'best score: {max(self.best)}')
+            self.menu.draw(self.screen)
+            self.menu.point_message(f'score: {self.score}')
+            self.menu.draw(self.screen)
+            self.menu.dead_message(f'deads: {self.death_count}')
+            self.menu.draw(self.screen)
+
+
+            
+       
+
 
         self.menu.draw(self.screen)
         
@@ -99,6 +112,7 @@ class Game:
 
     def update_score(self):
         self.score += 1
+        
 
         if self.score % 100 == 0 and self.game_speed < 500:
             self.game_speed += 5   

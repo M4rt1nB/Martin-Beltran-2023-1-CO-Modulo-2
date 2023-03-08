@@ -38,5 +38,22 @@ class menu:
   self.text = self.font.render(message, True, (0, 0, 0))
   self.text_rect = self.text.get_rect()
   self.text_rect.center = (self.half_screen_whidth, self.half_screen_heigt)
+
+ 
+ def best_message(self, message):
+  self.text = self.font.render(message, True, (0, 0, 0))
+  self.text_rect = self.text.get_rect()
+  self.text_rect.center = (self.half_screen_whidth , self.half_screen_heigt + 50)
+ 
+ def point_message(self, message):
+  self.text = self.font.render(message, True, (0, 0, 0))
+  self.text_rect = self.text.get_rect()
+  self.text_rect.center = (self.half_screen_whidth , self.half_screen_heigt + 100)
+  
+ def dead_message(self, message):
+  self.text = self.font.render(message, True, (0, 0, 0))
+  self.text_rect = self.text.get_rect()
+  self.text_rect.center = (self.half_screen_whidth , self.half_screen_heigt + 150) 
+ 
   
  

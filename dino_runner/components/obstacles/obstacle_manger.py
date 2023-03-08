@@ -34,6 +34,7 @@ class Obstaclemanager:
 
         if game.player.dino_rect.colliderect(obstacle.rect):
             game.death_count += 1
+            game.best.append(game.score)
             pygame.time.delay(1000)
             game.playing = False
             
