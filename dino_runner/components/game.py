@@ -85,11 +85,12 @@ class Game:
         self.menu.reset_screen_color(self.screen)
         half_screen_width = SCREEN_WIDTH // 2
         half_screen_height = SCREEN_HEIGHT // 2
-
+        
         if self.death_count == 0:
+            
             self.menu.draw(self.screen)
         else:
-            self.menu.update_message("ops you dont jump")
+            self.menu.update_message("ops you dont jump , press any key to start")
             self.menu.draw(self.screen)
             self.menu.best_message(f'best score: {max(self.best)}')
             self.menu.draw(self.screen)
