@@ -10,7 +10,7 @@ class cactus(obstacle):
         super().__init__(image , self.type)
         self.rect.y = 325
 
-        if self.type > 3:
+        if self.type > 2:
             self.rect.y = 300
 
         else:
