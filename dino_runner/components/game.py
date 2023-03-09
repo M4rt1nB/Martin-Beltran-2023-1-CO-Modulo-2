@@ -102,7 +102,8 @@ class Game:
             self.menu.draw(self.screen, 'Press any key to start ...')
         else:
             self.update_highest_score()
-            self.menu.draw(self.screen, 'Game over. Press any key to restart')
+            self.menu.draw(self.screen, ' Press any key to restart')
+            self.menu.draw(self.screen, f'Game over', half_screen_width, 100, )
             self.menu.draw(self.screen, f'Your score: {self.score.count}', half_screen_width, 350, )
             self.menu.draw(self.screen, f'Highest score: {self.highest_score.count}', half_screen_width, 400, )
             self.menu.draw(self.screen, f'Total deaths: {self.death_count.count}', half_screen_width, 450, )

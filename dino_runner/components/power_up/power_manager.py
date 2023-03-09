@@ -9,13 +9,13 @@ from dino_runner.components.power_up.hammer import hammer
 class powerUpmanager:
     def __init__(self):
         self.power_ups = []
-        self.when_appears = random.randint(100, 2000)
+        self.when_appears = random.randint(100,200)
         self.tool = [ hammer(),shield()]
 
         self.duration = random.randint(5, 7)
         
     def generate_power_up(self):
-        self.when_appears += random.randint(100, 2000)
+        self.when_appears += random.randint(100, 200)
         power_up = random.choice(self.tool)
         self.power_ups.append(power_up)
 
@@ -31,9 +31,8 @@ class powerUpmanager:
                 game.player.has_power_up = True
                 game.player.power_time_up = power_up.start_time + (self.duration * 1000)
                 self.power_ups.remove(power_up)
-            if game.player.dino_rect.colliderect(self.tool[0]):
-                game.GAME_SPEED -= 10
-            
+           
+          
 
     def draw(self, screen):
         for power_up in self.power_ups:
@@ -41,4 +40,4 @@ class powerUpmanager:
 
     def reset_power_ups(self):
         self.power_ups = []
-        self.when_appears = random.randint(100, 2000)
+        self.when_appears = random.randint(100, 200)

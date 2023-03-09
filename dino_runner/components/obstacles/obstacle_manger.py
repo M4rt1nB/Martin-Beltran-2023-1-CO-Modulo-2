@@ -33,15 +33,19 @@ class Obstaclemanager:
             obstacle.update(game.game_speed, self.obstacles)
 
         if game.player.dino_rect.colliderect(obstacle.rect):
-              if game.player.type != SHIELD_TYPE  :
+              if game.player.type != SHIELD_TYPE and game.player.type != HAMMER_TYPE :
                 game.death_count.update()
                 pygame.time.delay(1000)
                 game.playing = False
                 
               else:
                   self.obstacles.remove(obstacle)
-       
-       
+                
+                 
+              if game.player.type == HAMMER_TYPE:
+                  game.GAME_SPEED -= 10
+                  
+                
 
 
            
