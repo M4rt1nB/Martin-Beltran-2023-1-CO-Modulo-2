@@ -2,14 +2,17 @@ import pygame
 
 from dino_runner.utils.constants import FONT_STYLE, SCREEN_HEIGHT, SCREEN_WIDTH
 
+
 class menu:
   HALF_SCREEN_HEIGHT = SCREEN_HEIGHT // 2
   HALF_SCREEN__WIDTH = SCREEN_WIDTH // 2
-        
+   
+  
   def __init__(self, screen):
     screen.fill((255, 255, 255))
     self.font = pygame.font.Font(FONT_STYLE, 30)
-    
+    self.sound = pygame.mixer.Sound('soni.mp3')
+   
   def update(self, game):
     pygame.display.update()
     self.handle_events_on_menu(game)
@@ -22,6 +25,8 @@ class menu:
       elif event.type == pygame.KEYDOWN:
         game.run()
         
+        
+        
   def reset_screen_color(self, screen):
     screen.fill((255, 255, 255))
     
@@ -30,5 +35,6 @@ class menu:
     text_rect = text.get_rect()
     text_rect.center = (x, y)
     screen.blit(text, text_rect)
- 
+    self.sound.play()
+    
  
